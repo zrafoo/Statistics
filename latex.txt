@@ -1,0 +1,376 @@
+\documentclass[12pt,cmcyralt]{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{cmap}     % поиск в PDF
+\usepackage[T2A]{fontenc}   % кодировка
+\usepackage[utf8]{inputenc}   % кодировка исходного текста
+\usepackage[english,russian]{babel} % локализация и переносы
+\usepackage{amsmath}                         %Подключает математический пакет
+\usepackage{amsfonts}                          %Математические шрифты
+\usepackage{amsmath,amsthm,amssymb} 
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+
+
+\input titlepage
+
+\begin{document}
+
+\tableofcontents
+\newpage
+
+\setlength\parindent{24pt}
+\textbf{\Large{Домашнее задание 1.\\ Характеристики вероятностных распределений}}
+\vspace{1em}
+\section{\large{Описание основных характеристик распределения}}
+
+
+\subsection{Отрицательное биномиальное}
+\begin{itemize}
+
+\item Функция распределения
+\begin{center}
+Закон распределения отрицательного биномиального распределения:\\
+\vspace{1em}
+
+\(P(x)=\mathrm{C}_{x+m-1}^{x} \theta^m (1- \theta)^x, x\in \mathbf N, 0<\theta<1\)\\
+\vspace{1em}
+Функция распределения отрицательного биномиального распределения:\\
+\vspace{1em}
+\(F_\xi(x)=P(\xi\leqslant x)\)
+в элементарных функциях не выражается и может быть выражено через неполную бета-функцию:\\
+\vspace{1em}
+\(F\small{\xi}(x)=I_p(m,x+1)\)\\
+\vspace{1em}
+\end{center}
+
+\item Математическое ожидание
+\begin{center}
+Математическим ожиданием случайной величины $\xi$ называется интеграл 
+Лебега от нее по ее мере P\\\vspace{1em}
+\(M\xi=E\xi=\int_{\Omega}^{}\xi P(dw)\)\\\vspace{1em}
+    \(M\xi=\sum_{i=1}^{\infty}x_iP(\xi=x_i)\)\\
+    \vspace{1em}
+    После долгих попыток посчитать самостоятельно, я сдался и взял значения из интернета.\\
+    \vspace{1em}
+    \(M\xi=\frac{m\theta}{1-\theta}\)
+
+\end{center}
+\item Дисперсия
+\begin{center}
+Центральный момент второго порядка называется дисперсией и обозначается D$\xi$\\\vspace{1em}
+\(D\xi=M\xi^2-(M\xi)^2\)\\
+    \vspace{1em}
+    \(D\xi=\frac{m\theta}{(1-\theta)^2}\)
+\end{center}
+\item Квантиль уровня $\gamma$
+\begin{center}
+    Рассмотрим вероятностное пространство \((\Omega, F,P)\) и \(P^x\)-
+вероятностная мера, задающая распределение с. в. $X$. Пусть $\gamma$\(\in\)(0,1). Тогда $\gamma$− квантилем (квантилем уровня $\gamma$ распределения \(P^x\) называется число \(x_a\in R\) такое, что\\\vspace{1em}
+\(P(X\leqslant x_a)\geqslant \gamma\)\\\vspace{1em}
+\(P(X\geqslant x_a)\geqslant1- \gamma\)\\\vspace{1em}
+Из-за невозможности выразить функцию распределения в элементарных, нет возможности и получить квантиль распределения, выражаемый в элементарных функциях\\\vspace{1em}
+\end{center}
+\end{itemize}
+
+
+\subsection{Равномерное I}
+\begin{itemize}
+\item Функция распределения
+\begin{center}
+    Плотность распределения\\
+    \vspace{1em}
+    \(f(x)=\theta^{-1},x\in [0,\theta],\theta\in\mathrm{R}_+\)\\
+    \vspace{1em}
+    Функция распределения\\
+    \vspace{1em}
+   \( F(x)=\int_{-\infty }^{x}f(x)dx\)\\
+   \vspace{1em}
+\(F(x)=\int_{0}^{x}\theta^{-1}dx=\frac{x}{\theta}\)
+\end{center}
+\item Математическое ожидание
+\begin{center}
+    \(M\xi=\int_{-\infty}^{+\infty}xf(x)dx\)\\\vspace{1em}
+\(M\xi=\int_{0}^{\theta}\frac{x}{\theta}dx=\frac{x^2}{2\theta}|\theta,0=\frac{\theta}{2}\)\\\vspace{1em}
+\end{center}
+\item Дисперсия
+\begin{center}
+    \(D\xi=M\xi^2-(M\xi)^2\), где\\\vspace{1em}
+    \(M\xi^2=\int_{-\infty}^{+\infty}x^2f(x)dx\) \\\vspace{1em}
+\(M\xi^2=\int_{0}^{\theta}\frac{x^2}{\theta}dx=\frac{x^3}{3\theta}|\theta,0=\frac{\theta^2}{3}\)\\\vspace{1em}
+\(D\xi=M\xi^2-(M\xi)^2=\frac{\theta^2}{3}-\frac{\theta^2}{4}=\frac{\theta^2}{12}\)
+\end{center}
+\item Квантиль уровня $\gamma$
+\begin{center}
+\(F(x_\gamma)=\gamma\) \\\vspace{1em}
+\(\frac{x_\gamma}{\theta}=\gamma\) \\\vspace{1em}
+\(x_\gamma=\gamma\theta\) \\\vspace{1em}
+Медиана - \( \frac{\theta}{2}\) \\\vspace{1em}
+\(F(\frac{\theta}{2})=\frac{\theta}{2}\frac{1}{\theta}=1/2\) (В) \\\vspace{1em}
+\end{center}
+\end{itemize}
+\section{\large{Поиск примеров событий, которые могут быть описаны выбранными случайными величинами}}
+\subsection{Отрицательное биномиальное}
+\begin{flushleft}
+\hspace{1cm}\textbf{Связанные распределения:}\\
+
+\hspace{1cm}Распределение Паскаля является обобщением геометрического распределения: описывает распределение количества неудач \(x\) в независимых испытаниях, исход которых распределен по Бернулли с вероятностью успеха \(\theta\) до наступления \(m\) успехов в сумме. При \(m=1\), мы получим геометрическое распределение для величины \(x+1\).\\
+\vspace{1em}
+\hspace{1cm} \textbf{Пример отрицательного биномиального распределения:}\\
+\hspace{1cm}Ребенок должен продавать шоколадные батончики в домах на своей улице. Итак, ребенок ходит от двери к двери, продавая шоколадные батончики. В каждом доме существует 0,6 вероятности продажи одного шоколадного батончика и 0,4 вероятности того, что он ничего не продаст.\\
+
+\hspace{1cm}Какова вероятность продажи последнего шоколадного батончика в x доме?\\
+
+\hspace{1cm}Успешная продажа конфет достаточное количество раз - это то, что определяет наш критерий остановки (в отличие от неудачи с продажей), поэтому x в этом случае представляет количество неудач, а m представляет количество успехов. Распределение NegBin(m, \(\theta\)) описывает вероятность x неудач и m успехов в x + m испытаниях Bernoulli(\(\theta\)) с успехом в последнем испытании. Продажа пяти шоколадных батончиков означает получение пяти успехов. Следовательно, количество испытаний (т. е. домов), которое требуется для этого, равно x + 5 = n. Случайная величина, которая нас интересует, − это количество домов, поэтому мы подставляем x = n - 5 в NegBin(5, 0,4) и получаем следующую функцию распределения домов (для \(n\geqslant 5\)):
+\\
+\end{flushleft}
+\begin{center}
+    \(f(x)=\mathrm{C}_{(n-5)+5-1}^{n-5}0.4^5(1-0.4)^{n-5}=\mathrm{C}_{n-5}^{n-1}3^5\frac{2^{n-5}}{5^n}\)\\
+\end{center}
+\begin{flushleft}
+а)Какова вероятность того, что ребенок закончит на 10-м доме?\\
+\begin{center}
+ \(f(10)=0.10032\)   
+\end{center}
+б)Какова вероятность того, что ребенок не продаст все до 30-го дома \\\vspace{1em}
+Это может быть выражено как вероятность того, что он не закончит продавать с 5 по 30 дом.
+\begin{center}
+    \(1-\sum_{j=5}^{30}f(j)\simeq 0.00000658\)
+\end{center}
+Из-за довольно высокой вероятности того, что ребенок продаст шоколад в доме - 0,6, вероятность того, что он не сможет выполнить свое задание, крайне мала.
+\end{flushleft}
+
+\subsection{Равномерное I}
+\textbf{Связанные распределения:}
+\begin{flushleft}
+
+\begin{itemize}
+\item Если \(\xi\) имеет равномерное распределение, то методом выборки с обратным преобразованием \(\xi = − \lambda^{-1} \log{x}\) имеет экспоненциальное распределение с параметром (скорости) \(\lambda\).\\
+\item Если \(\xi\) имеет равномерное распределение, то \(Y = \xi^n\) имеет бета-распределение с параметрами (\(\frac{1}{n},1\)).\\
+\item Равномерное распределение является частным случаем бета-распределения с параметрами (1,1).\\
+\item Сумма двух независимых, равномерно распределенных равномерных распределений дает симметричное треугольное распределение.\\
+\end{itemize}
+\vspace{2em}
+\hspace{1cm}\textbf{Пример равномерного распределения:}\\\vspace{1em}
+\hspace{1cm}\textbf{Задача.} В здании областной администрации случайное время ожидания лифта
+равномерно распределено в диапазоне от 0 до 3 минут. Найти:\\
+\hspace{1cm}а) плотность распределения времени ожидания, \\
+\hspace{1cm}б) вероятность ожидания лифта более чем 2 минуты, \\
+\hspace{1cm}в) вероятность того, что лифт прибудет в течение первых 15 секунд, \\
+\hspace{1cm}г) среднее время ожидания лифта и дисперсию времени ожидания. \\\vspace{1em}
+\textbf{Решение.} Пусть случайная величина \(\xi\) – время ожидания лифта от момента прихода, \(0<\xi<3\). \(\xi\) имеет равномерное распределение на интервале \((0,\theta)=(0,3)\) , то есть плотность распределения имеет вид:\\
+\begin{center}
+\(    f(x)=
+\begin{cases}
+   0, x<0\\
+   \frac{1}{3}, 0\le x \le3 \\
+   0, x>3\\
+\end{cases}\)
+\end{center}
+Найдем вероятность ожидания лифта более чем 2 минуты:\\
+\begin{center}
+    \(P(\xi>2)=\int_{2}^{+\infty}f(x)dx=\int_{2}^{3}\frac{1}{3}dx=\frac{1}{3}x|3,2=\frac{1}{3}\)
+\end{center}
+Найдем вероятность того, что лифт прибудет в течение первых 15 секунд = ¼ минуты.\\
+\begin{center}
+    \(P(0<\xi<1/4)=\int_{0}^{1/4}f(x)dx=\frac{1}{3}x|1/4,0=\frac{1}{12}\)
+\end{center}
+Найдем среднее время ожидания лифта и дисперсию времени ожидания по формулам для равномерного распределения: \\
+\begin{center}
+    \(M\xi=\frac{\theta}{2}=1,5\) минуты\\\vspace{1em}
+    \(D\xi=\frac{\theta^2}{12}=0,75\) минут\\
+\end{center}
+
+\end{flushleft}
+\section{\large{Описание способа моделирования выбранных случайных величин}}
+\subsection{Отрицательное биномиальное}
+\begin{center}
+Пусть \(X_i\) - последовательность независимых с.в. с распределением Бернулли, т.е.\\\\
+\(X_i=
+\begin{cases}
+1, p\\
+0, q=1-p\\
+\end{cases}\)\\
+Построим случайную величину \(Y\) следующим образом. Пусть \(k+m\) — номер m-го успеха в этой последовательности. Тогда \(Y=k\)\\
+    Код написан на языке Python версии 3.10. Источником равномерно распределенных случайных величин служит модуль random\\
+\includegraphics{kode nbin.PNG}\\
+рис.1 Код для отрицательного биномиального распределения
+\includegraphics{nbin100k, 0,5, 5.png}
+рис.2.1 \(n=100.000, \theta=0.5, m=5\)
+\includegraphics{nbin100k, 0,5, 10.png}
+рис.2.2 \(n=100.000, \theta=0.5, m=10\)
+\includegraphics{nbin100k, 0,5, 40.png}
+рис.2.3 \(n=100.000, \theta=0.5, m=40\)
+\end{center}
+\subsection{Равномерное I}
+\begin{center}
+    Код написан на языке Python версии 3.10
+\includegraphics{kode uniform.PNG}\\
+рис.3 Код для равномерного распределения
+\includegraphics{uni_1k.png}
+рис.4.1 \(n=1.000, \theta=12\)
+\includegraphics{uni_100k.png}
+рис.4.2 \(n=100.000, \theta=12\)
+\includegraphics{uni_1kk.png}
+рис.4.3 \(n=1.000.000, \theta=12\)
+\end{center}
+\vspace{18em}
+\textbf{\Large{Домашнее задание 2.\\ Основные понятия математической статистики}}\\
+
+\section{\large{Генерация выборок случайных величин}}
+\subsection{Отрицательное биномиальное}
+\begin{center}
+Создадим a(n) - объект типа list, в котором содержится 5 объектов типа list, в котором находится интересующая нас выборка из n элементов\\
+\includegraphics{gen5Nbin.PNG}\\
+рис.5.1 \(m=10, \theta=0.5\)\\
+\vspace{1em}
+\includegraphics[width=1\linewidth]{nbin.PNG}\\
+рис 5.2 Объекты a5 и a10
+\end{center}
+
+\subsection{Равномерное I}
+
+\begin{center}
+Тем же методом создадим выборки для равномерного распределения\\
+\includegraphics[width=1.1\linewidth]{uni generate.JPG}\\
+рис.6 \(\theta=10\)\\
+\end{center}
+
+\section{\large{Построение эмпирических функций распределения}}
+\subsection{Отрицательное биномиальное}
+
+\begin{center}
+\includegraphics{nbin emp/a=5,nbin.png}\\
+рис.7.1 \(n=5, m=10, \theta=0.5\)\\
+\includegraphics{nbin emp/a=10,nbin.png}\\
+рис.7.2 \(n=10, m=10, \theta=0.5\)\\
+\includegraphics{nbin emp/a=100,nbin.png}\\
+рис.7.3 \(n=100, m=10, \theta=0.5\)\\
+\includegraphics{nbin emp/a=200,nbin.png}\\
+рис.7.4 \(n=200, m=10, \theta=0.5\)\\
+\includegraphics{nbin emp/a=400,nbin.png}\\
+рис.7.5 \(n=400, m=10, \theta=0.5\)\\
+\includegraphics{nbin emp/a=600,nbin.png}\\
+рис.7.6 \(n=600, m=10, \theta=0.5\)\\
+\includegraphics{nbin emp/a=800,nbin.png}\\
+рис.7.7 \(n=800, m=10, \theta=0.5\)\\
+\includegraphics{nbin emp/a=1000,nbin.png}\\
+рис.7.8 \(n=1000, m=10, \theta=0.5\)\\
+\vspace{2em}
+\(D_(m,n)\) посчитан отдельно в прилагаемом файле nbinD.txt
+\includegraphics{uni_D.JPG}\\
+рис.7.9 nbinD.txt
+\end{center}
+
+\subsection{Равномерное I}
+
+\begin{center}
+\includegraphics{uni emp/a=5 uniform.png}\\
+рис.8.1 \(n=5, \theta=10\)\\
+\includegraphics{uni emp/a=10 uniform.png}\\
+рис.8.2 \(n=10, \theta=10\)\\
+\includegraphics{uni emp/a=100 uniform.png}\\
+рис.8.3 \(n=100, \theta=10\)\\
+\includegraphics{uni emp/a=200 uniform.png}\\
+рис.8.4 \(n=200, \theta=10\)\\
+\includegraphics{uni emp/a=400 uniform.png}\\
+рис.8.5 \(n=400, \theta=10\)\\
+\includegraphics{uni emp/a=600 uniform.png}\\
+рис.8.6 \(n=600, \theta=10\)\\
+\includegraphics{uni emp/a=800 uniform.png}\\
+рис.8.7 \(n=800, \theta=10\)\\
+\includegraphics{uni emp/a=1000 uniform.png}\\
+рис.8.8 \(n=1000, \theta=10\)\\
+\vspace{2em}
+\(D_(m,n)\) посчитан отдельно в прилагаемом файле nbinD.txt
+\includegraphics{uni_D.JPG}\\
+рис.8.9 uniformD.txt
+\end{center}
+
+\section{\large{Построение гистограмм и полигона частот}}
+\subsection{Отрицательное биномиальное}
+
+\begin{center}
+\includegraphics{poly nbin/poly a=5,nbin.png}\\
+рис.9.1 \(n=5, m=10, \theta=0.5\)\\
+\includegraphics{poly nbin/poly a=10,nbin.png}\\
+рис.9.2 \(n=10, m=10, \theta=0.5\)\\
+\includegraphics{poly nbin/poly a=100,nbin.png}\\
+рис.9.3 \(n=100, m=10, \theta=0.5\)\\
+\includegraphics{poly nbin/poly a=200,nbin.png}\\
+рис.9.4 \(n=200, m=10, \theta=0.5\)\\
+\includegraphics{poly nbin/poly a=400,nbin.png}\\
+рис.9.5 \(n=400, m=10, \theta=0.5\)\\
+\includegraphics{poly nbin/poly a=600,nbin.png}\\
+рис.9.6 \(n=600, m=10, \theta=0.5\)\\
+\includegraphics{poly nbin/poly a=800,nbin.png}\\
+рис.9.7 \(n=800, m=10, \theta=0.5\)\\
+\includegraphics{poly nbin/poly a=1000,nbin.png}\\
+рис.9.8 \(n=1000, m=10, \theta=0.5\)\\
+\vspace{2em}
+\end{center}
+
+\subsection{Равномерное I}
+
+\begin{center}
+Плотность распределения при параметре 10:\\
+\includegraphics{poly uni/poly a=10 uniform.png}\\
+
+\includegraphics{hist a=5 uni.png}\\
+рис.10.1 \(n=5,\theta=10\)\\
+\includegraphics{hist a=10 uni.png}\\
+рис.10.2 \(n=10, \theta=10\)\\
+\includegraphics{hist a=100 uni.png}\\
+рис.10.3 \(n=100, \theta=10\)\\
+\includegraphics{hist a=200 uni.png}\\
+рис.10.4 \(n=200, \theta=10\)\\
+\includegraphics{hist a=400 uni.png}\\
+рис.10.5 \(n=400, \theta=10\)\\
+\includegraphics{hist a=600 uni.png}\\
+рис.10.6 \(n=600, \theta=10\)\\
+\includegraphics{hist a=800 uni.png}\\
+рис.10.7 \(n=800, \theta=10\)\\
+\includegraphics{hist a=1000 uni.png}\\
+рис.10.8 \(n=1000, \theta=10\)\\
+\vspace{2em}
+
+При сравнении графиков становится очевидно, что при увеличении n полигон частот приближается к графику функции вероятности, а график эмпирической функции приближается к графику функции распределения, т.е: \\
+\(\frac{\wedge}{F}_n(x)\to F(x))\)
+\end{center}
+
+\section{\large{Вычисление выборочных моментов}}
+\subsection{Отрицательное биномиальное}
+
+\begin{center}
+\(\frac{}{X}\) посчитан отдельно в прилагаемом файле nbinX.txt. Истинное значение \(X\xi=\frac{m\theta}{1-\theta}=\frac{10*0,5}{0,5}=10\)\\
+\vspace{1em}
+\includegraphics{nbin_X.JPG}\\
+рис.11.1 nbinX.txt\\
+\vspace{2em}
+\(\frac{}{S}^2\) посчитан отдельно в прилагаемом файле nbinS.txt. Истинное значение \(S^2\xi=\frac{m\theta}{(1-\theta)^2}=\frac{10*0,5}{0,25}=20\)\\
+\includegraphics{nbin_S.JPG}\\
+рис.11.2 nbinS.txt\\
+\end{center}
+
+\subsection{Равномерное I}
+
+\begin{center}
+\(\frac{}{X}\) посчитан отдельно в прилагаемом файле uniX.txt. Истинное значение \(X\xi=\frac{\theta}{2}=5\)\\\vspace{1em}
+\includegraphics{uni_X.JPG}\\
+рис.12.1 uniX.txt\\
+\vspace{2em}
+\(\frac{}{S}^2\) посчитан отдельно в прилагаемом файле uniS.txt. Истинное значение \(S^2\xi=\frac{\theta^2}{12}=8\frac{1}{3}\)\\
+\includegraphics{uni_S.JPG}\\
+рис.12.2 nbinS.txt\\\vspace{2em}
+Оценки обладают следующими свойствами:\\
+\begin{itemize}
+\item \textbf{Несмещенность.} Это свойство означает, что оценка не содержит систематической ошибки. Т.е. мат. ожидание оценки совпадает с истинными характеристиками распределения.\\
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{Состоятельность.} Это свойство означает, что оценка приближается сколь угодно близко к истинному значению характеристики по мере увеличения объема выборки.
+\end{itemize}
+
+\end{center}
+
+\end{document}
